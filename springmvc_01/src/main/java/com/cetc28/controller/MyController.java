@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version: 1.0
  */
 @Controller//当springMVC框架扫描到controller包的时候, 发现这个类有@Controller这个注解, 就会实例化
-@RequestMapping("/cetc28")
 public class MyController {
     //之前继承HttpServlet时, service方法参数中封装了请求req和响应resp, 用来对输入输出进行处理
 //    void service(HttpServletRequest req, HttpServletResponse resp){
@@ -30,5 +29,10 @@ public class MyController {
         System.out.println("secondController");
         //进行一系列处理之后, 进行页面的跳转
         return "first";
+    }
+
+    @RequestMapping("/success.do")
+    public String test1(){
+        return "success";
     }
 }
