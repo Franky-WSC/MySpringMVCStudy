@@ -2,6 +2,7 @@ package com.cetc28.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @Auther: WSC
@@ -31,8 +32,26 @@ public class MyController {
         return "first";
     }
 
-    @RequestMapping("/success.do")
+    @RequestMapping(value = {"/success.do", "/success.action"})
     public String test1(){
+        return "success";
+    }
+
+    @RequestMapping(value = "/testRequest", method = {RequestMethod.GET, RequestMethod.POST})
+    public String testRequest(){
+        System.out.println("testRequest");
+        return "success";
+    }
+
+    @RequestMapping(value = "/testRequest2", params = {"username!=root", "password"})
+    public String testRequest2(){
+        System.out.println("testRequest2");
+        return "success";
+    }
+
+    @RequestMapping(value = "/testRequest3", headers = "Accept-Encoding=gzip, deflate, br")
+    public String testRequest3(){
+        System.out.println("testRequest3");
         return "success";
     }
 }
