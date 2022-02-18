@@ -26,7 +26,10 @@
     <p>生日:
         <input type="text" name="birthdate">
     </p>
-
+    <p>宠物:
+        <p>名字:<input type="text" name="pets[0].petName">类型:<input type="text" name="pets[0].petType"></p>
+        <p>名字:<input type="text" name="pets[1].petName">类型:<input type="text" name="pets[1].petType"></p>
+    </p>
     <input type="submit">
 </form>
 </body>

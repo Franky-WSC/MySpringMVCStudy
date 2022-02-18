@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -20,6 +21,12 @@ public class Person implements Serializable {
     private String page;
     private String gender;
     private String[] hobby;
-//    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthdate;
+
+    ArrayList<Pet> pets;
+
+    public ArrayList<Pet> getPets() {
+        return pets;
+    }
 }
